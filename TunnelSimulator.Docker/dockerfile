@@ -1,0 +1,22 @@
+FROM node:22 AS angular-build
+WORKDIR /app
+COPY ./TunnelSimulator.UI ./TunnelSimulator.UI
+WORKDIR /app/TunnelSimulator.UI
+RUN npm install
+# RUN npm audit
+RUN npm run build --prod
+
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS dotnet-build
+WORKDIR /src
+COPY ./TunnelSimulator.API .
+RUN dotnet restore "TunnelSimulator.API/TunnelSimulator.API.csproj"
+RUN dotnet publish "TunnelSimulator.API/TunnelSimulator.API.csproj" -c Release -o /app/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
+WORKDIR /app
+COPY --from=angular-build /app/TunnelSimulator.UI/dist /app/wwwroot
+COPY --from=dotnet-build /app/publish .
+COPY ./TunnelSimulator.API/TunnelSimulator.API/https.pfx ./https.pfx
+EXPOSE 8080
+EXPOSE 8443
+ENTRYPOINT ["dotnet", "TunnelSimulator.API.dll"]

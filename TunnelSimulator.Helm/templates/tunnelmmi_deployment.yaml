@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tunnelsimulator-deployment
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tunnelsimulator-deployment
+  template:
+    metadata:
+      labels:
+        app: tunnelsimulator-deployment
+    spec:
+      containers:
+        - name: tunnelsimulator-deployment
+          image: 'localhost:32000/tunnelsimulator:latest'
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

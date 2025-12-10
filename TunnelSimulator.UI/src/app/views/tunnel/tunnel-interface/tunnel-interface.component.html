@@ -1,0 +1,111 @@
+<div class="flex gap-3 flex-col scale-75 md:scale-100">
+  <div class="flex gap-2">
+    <button (click)="setCameraPosition(-100, -2, -3, -125, -30, -30)" class="ml-32 w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowLeftMini" class=""></ng-icon>
+      </div>
+    </button>
+    <button (click)="setCameraPosition(-95, -2, -3, -30, -50, -50)" class="w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowRightMini" class=""></ng-icon>
+      </div>
+    </button>
+    <button (click)="setCameraPosition(95, -2, -3, -30, -50, -50)" class="ml-4 w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowLeftMini" class=""></ng-icon>
+      </div>
+    </button>
+    <button (click)="setCameraPosition(100, -2, -3, 125, -30, -30)" class="w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowRightMini" class=""></ng-icon>
+      </div>
+    </button>
+
+    <button class="mx-4 w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray" (click)="toggleCalamity(0)">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroXMark" class="text-red" *ngIf="tunnelStatus && !tunnelStatus!.tubes[0]!.isCalamity"></ng-icon>
+        <ng-icon name="heroArrowDown" class="text-success" *ngIf="tunnelStatus && tunnelStatus!.tubes[0]!.isCalamity"></ng-icon>
+      </div>
+    </button>
+
+    <button (click)="setCameraPosition(180, 5, -13, 125, -30, 30)" class="w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowLeftMini" class=""></ng-icon>
+      </div>
+    </button>
+    <button (click)="setCameraPosition(185, 5, -13, 400, -30, 100)" class="w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowRightMini" class=""></ng-icon>
+      </div>
+    </button>
+  </div>
+  <div class="w-[500px] h-6">
+    <div class="h-6 w-[500px] flex absolute justify-center items-center">
+      <div class="absolute h-6 w-[500px] bg-dark-gray rounded">
+      </div>
+      <div class="absolute h-8 w-[250px] bg-darker-gray rounded flex justify-center items-center" [ngClass]="{'bg-red': tunnelStatus && tunnelStatus!.tubes[0]!.isCalamity}">
+        <ng-icon name="heroChevronLeft" class="text-white font-semibold"></ng-icon></div>
+    </div>
+  </div>
+  <div class="w-[500px] h-6">
+    <div class="h-6 w-[500px] flex absolute justify-center items-center">
+      <div class="absolute h-6 w-[500px] bg-dark-gray rounded items-center">
+      </div>
+      <div class="absolute h-8 w-[250px] bg-darker-gray rounded flex justify-center items-center" [ngClass]="{'bg-red': tunnelStatus && tunnelStatus!.tubes[1]!.isCalamity}">
+        <ng-icon name="heroChevronRight" class="text-white font-bold"></ng-icon>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-row-reverse gap-2">
+    <button (click)="setCameraPosition(100, -2, 3, 125, -30, 30)" class="mr-32 w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowRightMini" class=""></ng-icon>
+      </div>
+    </button>
+    <button (click)="setCameraPosition(95, -2, 3, 30, -50, 50)" class="w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowLeftMini" class=""></ng-icon>
+      </div>
+    </button>
+    <button (click)="setCameraPosition(-95, -2, 3, 30, -50, 50)" class="mr-4 w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowRightMini" class=""></ng-icon>
+      </div>
+    </button>
+    <button (click)="setCameraPosition(-100, -2, 3, -125, -30, 30)" class="w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowLeftMini" class=""></ng-icon>
+      </div>
+    </button>
+
+    <button class="mx-4 w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray" (click)="toggleCalamity(1)">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroXMark" class="text-red" *ngIf="tunnelStatus && !tunnelStatus!.tubes[1]!.isCalamity"></ng-icon>
+        <ng-icon name="heroArrowDown" class="text-success" *ngIf="tunnelStatus && tunnelStatus!.tubes[1]!.isCalamity"></ng-icon>
+      </div>
+    </button>
+
+    <button (click)="setCameraPosition(-180, 5, 13, -125, -30, -30)" class="w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowRightMini" class=""></ng-icon>
+      </div>
+    </button>
+    <button (click)="setCameraPosition(-185, 5, 13, -400, -30, -100)" class="w-10 h-10 border border-gray text-black gray shadow rounded-full flex justify-center items-center hover:bg-gray">
+      <div class="flex flex-col justify-center items-center">
+        <ng-icon name="heroVideoCamera" class=""></ng-icon>
+        <ng-icon name="heroArrowLeftMini" class=""></ng-icon>
+      </div>
+    </button>
+  </div>
+</div>
