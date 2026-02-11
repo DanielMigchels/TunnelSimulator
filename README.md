@@ -15,7 +15,7 @@ Pulls image from public container registry and runs it on your docker instance.
 ```bash
 docker run -p 8080:8080 -p 8443:8443 danielmigchels/tunnelsimulator:latest
 ```
-App becomes available on port 8080 and should be reachable through HTTP (http://localhost:8080)
+App becomes available on port 8080 and should be reachable through HTTP. (http://localhost:8080)
 
 ### Docker Compose
 Compiles source code, builds docker image, and runs it along with its dependencies on your docker instance.
