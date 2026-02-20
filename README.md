@@ -2,6 +2,8 @@
 
 [![Build](https://github.com/DanielMigchels/TunnelSimulator/actions/workflows/dotnet-build.yml/badge.svg)](https://github.com/DanielMigchels/TunnelSimulator/actions/workflows/dotnet-build.yml) [![Docker Hub](https://img.shields.io/docker/v/danielmigchels/tunnelsimulator?label=docker%20hub&logo=docker)](https://hub.docker.com/r/danielmigchels/tunnelsimulator)
 
+Live demo: https://tunnelsimulator.danielmigchels.nl/
+
 A real-time tunnel traffic simulation application with 3D visualization built with Angular 19, Three.js, and .NET 9, featuring WebSocket-based live updates for dynamic car movement tracking.
 
 <img style="width: 600px;" src="TunnelSimulator.Docs/tunnelsimulator.gif">
@@ -29,4 +31,5 @@ Installs the app on your Kubernetes cluster.
 ```bash
 helm install tunnelsimulator .\TunnelSimulator.Helm\ --namespace tunnelsimulator --create-namespace
 ```
+
 App becomes available on port 32400 and should be reachable through HTTP. (http://localhost:32400)
