@@ -1,7 +1,7 @@
-<div class="relative h-screen overflow-hidden">
+<div class="relative h-[100dvh] overflow-hidden">
   <div class="absolute bottom-0 w-full z-10">
     <div class="flex flex-col justify-center items-center">
-      <div class="text-black bg-white rounded-t-xl hover:bg-gray border-darker-gray border-t -mb-[1px] border-x w-24 h-24 md:w-12 md:h-10 flex justify-center items-center cursor-pointer z-20" (click)="controlsToggled = !controlsToggled">
+      <div class="text-black bg-white rounded-t-xl hover:bg-gray border-darker-gray border-t -mb-[1px] border-x w-12 h-10 flex justify-center items-center cursor-pointer z-20" (click)="controlsToggled = !controlsToggled">
         <ng-icon name="heroChevronUp" class="transition-all duration-500 transform ease-in-out" [ngClass]="{ 'rotate-180': controlsToggled }"></ng-icon>
       </div>
       <div class="transform ease-in-out transition-all duration-500" [ngClass]="{ 'h-52': controlsToggled, 'h-0': !controlsToggled }">
@@ -11,7 +11,7 @@
       </div>
     </div>
   </div>
-  <div class="absolute top-0 w-screen h-screen bg-black">
+  <div class="absolute top-0 w-screen h-[100dvh] bg-black">
     <div class="w-full h-full" #threeContainer></div>
   </div>
 </div>
