@@ -1,7 +1,7 @@
 <div class="relative h-[100dvh] overflow-hidden">
   <div class="absolute bottom-0 w-full z-10">
     <div class="flex flex-col justify-center items-center">
-      <div class="text-black bg-white rounded-t-xl hover:bg-gray border-darker-gray border-t -mb-[1px] border-x w-12 h-10 flex justify-center items-center cursor-pointer z-20" (click)="controlsToggled = !controlsToggled">
+      <div class="opacity-0 sm:opacity-100 transition-all text-black bg-white rounded-t-xl hover:bg-gray border-darker-gray border-t -mb-[1px] border-x w-12 h-10 flex justify-center items-center cursor-pointer z-20" (click)="controlsToggled = !controlsToggled">
         <ng-icon name="heroChevronUp" class="transition-all duration-500 transform ease-in-out" [ngClass]="{ 'rotate-180': controlsToggled }"></ng-icon>
       </div>
       <div class="transform ease-in-out transition-all duration-500" [ngClass]="{ 'h-52': controlsToggled, 'h-0': !controlsToggled }">
